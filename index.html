@@ -64,6 +64,13 @@
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: 0.3s; }
 
+    /* ── LOGO ── */
+    .hero-logo {
+      display: flex; justify-content: center; margin-bottom: 1.8rem;
+    }
+    .hero-logo svg { filter: drop-shadow(0 4px 18px rgba(232,168,56,0.35)); }
+    .nav-logo svg { display: block; }
+
     /* ── HERO ── */
     .hero {
       background: linear-gradient(135deg, var(--hero-bg) 0%, #162b4a 60%, #3b1010 100%);
@@ -270,7 +277,17 @@
 <!-- ════════════════ NAV ════════════════ -->
 <nav role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a class="nav-brand" href="#inicio"><span>Mi Mejor</span> Plan</a>
+    <a class="nav-brand nav-logo" href="#inicio" style="display:flex;align-items:center;gap:8px;">
+      <svg width="34" height="34" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <polygon
+          points="190,100 153,86 178,55 139,61 145,22 114,47 100,10 86,47 55,22 61,61 22,55 47,86 10,100 47,114 22,145 61,139 55,178 86,153 100,190 114,153 145,178 139,139 178,145 153,114"
+          fill="#ffe033" stroke="#1a1a1a" stroke-width="8" stroke-linejoin="round"
+        />
+        <text x="100" y="90" font-family="Impact,'Arial Black',sans-serif" font-size="46" font-weight="900" fill="white" stroke="#1a1a1a" stroke-width="10" paint-order="stroke fill" text-anchor="middle">MI</text>
+        <text x="100" y="145" font-family="Impact,'Arial Black',sans-serif" font-size="52" font-weight="900" fill="white" stroke="#1a1a1a" stroke-width="10" paint-order="stroke fill" text-anchor="middle">MMP</text>
+      </svg>
+      <span>Mi Mejor</span> Plan
+    </a>
     <div class="nav-links" id="navLinks">
       <a href="#sobre" data-es="Sobre el Proyecto" data-en="About">Sobre el Proyecto</a>
       <a href="#objetivos" data-es="Objetivos" data-en="Objectives">Objetivos</a>
@@ -289,6 +306,66 @@
 
 <!-- ════════════════ HERO ════════════════ -->
 <section class="hero" id="inicio">
+  <!-- Logo MMP -->
+  <div class="hero-logo">
+    <svg width="160" height="160" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="burstGrad" cx="50%" cy="45%" r="55%">
+          <stop offset="0%" stop-color="#ffe033"/>
+          <stop offset="100%" stop-color="#f5c200"/>
+        </radialGradient>
+        <filter id="burstShadow" x="-10%" y="-10%" width="120%" height="120%">
+          <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="rgba(0,0,0,0.45)"/>
+        </filter>
+      </defs>
+      <!-- Starburst explosion shape -->
+      <polygon
+        points="
+          190,100 153,86 178,55 139,61 145,22 114,47
+          100,10  86,47  55,22  61,61  22,55  47,86
+          10,100  47,114 22,145 61,139 55,178 86,153
+          100,190 114,153 145,178 139,139 178,145 153,114
+        "
+        fill="url(#burstGrad)"
+        stroke="#1a1a1a"
+        stroke-width="6"
+        stroke-linejoin="round"
+        filter="url(#burstShadow)"
+      />
+      <!-- Inner highlight -->
+      <polygon
+        points="
+          182,100 149,87 172,59 136,65 141,28 112,51
+          100,18  88,51  59,28  64,65  28,59  51,87
+          18,100  51,113 28,141 64,135 59,172 88,149
+          100,182 112,149 141,172 136,135 172,141 149,113
+        "
+        fill="none"
+        stroke="rgba(255,255,255,0.3)"
+        stroke-width="2"
+      />
+      <!-- MI MEJOR text -->
+      <text
+        x="100" y="87"
+        font-family="Impact,'Arial Black',sans-serif"
+        font-size="28" font-weight="900"
+        fill="white"
+        stroke="#1a1a1a" stroke-width="5" paint-order="stroke fill"
+        text-anchor="middle"
+        letter-spacing="1"
+      >MI MEJOR</text>
+      <!-- PLAN text -->
+      <text
+        x="100" y="124"
+        font-family="Impact,'Arial Black',sans-serif"
+        font-size="42" font-weight="900"
+        fill="white"
+        stroke="#1a1a1a" stroke-width="6" paint-order="stroke fill"
+        text-anchor="middle"
+        letter-spacing="2"
+      >PLAN</text>
+    </svg>
+  </div>
   <div class="hero-tag" data-es="ANID – FONIS SA19I0115" data-en="ANID – FONIS SA19I0115">ANID – FONIS SA19I0115</div>
   <h1 data-es='"Mi Mejor Plan"' data-en='"My Best Plan"'>"Mi Mejor Plan"</h1>
   <p class="hero-sub" data-es="Adaptación y evaluación de un programa de competencias socioemocionales para la prevención del consumo de sustancias en adolescentes chilenos" data-en="Adaptation and evaluation of a social competence program for substance use prevention among Chilean adolescents">
@@ -419,7 +496,7 @@
       <div class="phase-card accent-border">
         <div class="phase-icon">🎯</div>
         <h3 data-es="Población objetivo" data-en="Target population">Población objetivo</h3>
-        <p data-es="Estudiantes de 6�arño básico de establecimientos educacionales con alta vulnerabilidad socioeconómica en la comuna de Lo Barnechea, Región Metropolitana de Santiago." data-en="6th grade students from schools with high socioeconomic vulnerability in Lo Barnechea, Metropolitan Region of Santiago.">Estudiantes de 6° año básico de establecimientos educacionales con alta vulnerabilidad socioeconómica en la comuna de Lo Barnechea, Región Metropolitana de Santiago.</p>
+        <p data-es="Estudiantes de 6° año básico de establecimientos educacionales con alta vulnerabilidad socioeconómica en la comuna de Lo Barnechea, Región Metropolitana de Santiago." data-en="6th grade students from schools with high socioeconomic vulnerability in Lo Barnechea, Metropolitan Region of Santiago.">Estudiantes de 6° año básico de establecimientos educacionales con alta vulnerabilidad socioeconómica en la comuna de Lo Barnechea, Región Metropolitana de Santiago.</p>
       </div>
       <div class="phase-card">
         <div class="phase-icon">📊</div>
